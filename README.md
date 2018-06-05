@@ -8,10 +8,14 @@ Francalancia, Mariano
  Al ser direccccionamiento a Byte, las direcciones se incerementan en 4 valores si no ocurre un salto condicional, caso contrario al valor de PC se le suma la direccion de salto condicional.
 ## El modulo PC consta las siguientes entradas y salidas:
 
- * Data_in (64 bits)
- * Clock_in (1 bit)
- * Data_out (64 bits)
+ * DATA_i (64 bits) No disponible en el bloque master
+ * DATA_o (64 bits) Conectado al **Bloque de Registros** indicando la dreccion de salto o instruccion siguiente
+ * CLOCK_i (1 bit) Señal de **Clock**
+ * ZERO_i (1 bit) Señal obtenida de la **ALU**
+ * IMGEN_i (64 bits) Señales obtenidas del bloque **IMMGEN** de la **Banco de Registros**
+ * INCOND_i (1 bit) Señal **Salto incondicional** obteniad de la **Unidad de Control**
+ * COND_i (1 bit) Señal **Salto Condicional** obtenida de la **Unidad de Control**
  
  ## Comportamiento del Bloque
- Para llevar a cabo el incremeto del valor del contador , se utiliza dos sumadores, cada una para los tipos de salto. En caso de instruccion condicional, data_in depende de el resultado de la condicion **Zero**  de la ALU.
+ Para llevar a cabo el incremeto del valor del contador , se utiliza dos sumadores, cada una para los tipos de salto. En caso de instruccion condicional, data_in depende de el resultado de la condicion **Zero**  de la ALU,  seguido del control a travez del bit de control INCOND, COND.
  En caso de Salto incondicional, el valor de Pc se incrementa en 4.
