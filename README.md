@@ -15,6 +15,7 @@ Francalancia, Mariano
  * IMGEN_i (64 bits) Señales obtenidas del bloque **IMMGEN** de la **Banco de Registros**
  * INCOND_i (1 bit) Señal **Salto incondicional** obteniad de la **Unidad de Control**
  * COND_i (1 bit) Señal **Salto Condicional** obtenida de la **Unidad de Control**
+ * RESET_i (1 bit) Señal de Reset Asincronico que lleva al el valor DATA_o del PC a 0. Su fincion es Resetear el uP. 
  
  ## Comportamiento del Bloque
  Para llevar a cabo el incremeto del valor del contador , se utiliza dos sumadores, cada una para los tipos de salto. En caso de instruccion condicional, data_in depende de el resultado de la condicion **Zero**  de la ALU,  seguido del control a travez del bit de control INCOND, COND.
