@@ -125,5 +125,4 @@ begin
 	wait;
 	end process;
 
-	end architecture arq_PC;
-	
+	end architecture arq_PC;	
