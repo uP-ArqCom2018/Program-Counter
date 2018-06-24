@@ -8,8 +8,8 @@ Francalancia, Mariano
  Al ser direccccionamiento a Byte, las direcciones se incerementan en 4 valores si no ocurre un salto condicional, caso contrario al valor de PC se le suma la direccion de salto condicional.
 ## El modulo PC consta las siguientes entradas y salidas:
 
- * DATA_i (64 bits) No disponible en el bloque master
- * DATA_o (64 bits) Conectado al **Bloque de Registros** indicando la dreccion de salto o instruccion siguiente
+ 
+ * DATA_o (12 bits) Conectado al **Bloque de Registros** indicando la dreccion de salto o instruccion siguiente
  * CLOCK_i (1 bit) Señal de **Clock**
  * ZERO_i (1 bit) Señal obtenida de la **ALU**
  * IMGEN_i (64 bits) Señales obtenidas del bloque **IMMGEN** de la **Banco de Registros**
