@@ -9,7 +9,7 @@ Francalancia, Mariano
 ## El modulo PC consta las siguientes entradas y salidas:
 
  
- * DATA_o (12 bits) Conectado al **Bloque de Registros** indicando la dreccion de salto o instruccion siguiente
+ * DATA_o (10 bits) Conectado al **Bloque de Registros** indicando la dreccion de salto o instruccion siguiente
  * CLOCK_i (1 bit) Señal de **Clock**
  * ZERO_i (1 bit) Señal obtenida de la **ALU**
  * IMGEN_i (64 bits) Señales obtenidas del bloque **IMMGEN** de la **Banco de Registros**
