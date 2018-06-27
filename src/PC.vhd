@@ -55,7 +55,7 @@ main: process (CLOCK_i,mux,Do_s,RESET_i,ZERO_i,COND_i,INCOND_i)
 	
 	if (RESET_i='0') then 
 	 Do_s <= (others => '0');
-	elsif (CLOCK_i'event and CLOCK_i='1') then
+	elsif (CLOCK_i'event and CLOCK_i='1' and to_integer(unsigned(Do_s))<36) then
 	  case mux is
 	    when '0' => 
 	      Do_s <= std_logic_vector(unsigned(Do_s) + cuatro) ;
