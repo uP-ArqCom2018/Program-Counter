@@ -34,22 +34,17 @@ architecture arq_PC of PC is
 	CONSTANT carry_i: std_logic := '0';
 	signal carry_o: std_logic;
 	
-COMPONENT ripple_carry_adder IS
-	generic (n:	INTEGER:=64); --Se define 8 por defecto
-	port( carry_in:	in std_logic;
-			x,y:	in std_logic_vector(n-1 downto 0);
-			suma:		out std_logic_vector(n-1 downto 0);
-			carry_out: out std_logic
-	);
-END COMPONENT;
+
 
 begin
      
-aux<="000000000000000000000000000000000000000000000000000000" & Do_s;   -- concateno 0s y D0_s
-Dext_s <=IMGEN_i(62 downto 0) & '0';
 
-sumad: ripple_carry_adder
-	   port map(carry_i,Dext_s,aux,Sumext_s,carry_o);
+
+Dext_s <=std_logic_vector(shift_left(unsigned(IMGEN_i),1));
+--
+aux <= std_logic_vector(to_unsigned(0,2*N-anchodataout)) & Do_s; 
+--
+Sumext_s <= std_logic_vector(unsigned((signed(Dext_s) + signed(aux))));
 
 
 
